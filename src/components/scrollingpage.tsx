@@ -40,6 +40,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
 
 }) => {
 
+    //TODO: better class names!
     
   return (
     <div className="container">
@@ -47,25 +48,25 @@ const ScrollingPage: React.FC<LayoutProps> = ({
             <svg />
             {isLeftTextFirst ? (
                 <>
-                    <div className="col-2 right-section-text-first-text">
-                        {leftText && <>{leftText}</>}
-                        {leftTextBackground && <>{leftTextBackground}</>}
+                    <div className="col-2 left-section-text-first-text">
+                        {leftText && <div className="left-text">{leftText}</div>}
+                        {leftTextBackground && <div className="left-text-background">{leftTextBackground}</div>}
                     </div>
-                    <div className="col-2 right-section-text-first-svg">
-                        {leftSVG && <>{leftSVG}</>} 
-                        {leftSVGBackground && <>{leftSVGBackground}</>}
+                    <div className="col-2 left-section-text-first-svg">
+                        {leftSVG && <div className="left-svg">{leftSVG}</div>} 
+                        {leftSVGBackground && <div className="left-svg-background">{leftSVGBackground}</div>}
                     </div>
                     )
                 </> 
             ) : ( 
                 <>
                     <div className="col-2 right-section-svg-first-svg">
-                        {leftSVG && <>{leftSVG}</>} 
-                        {leftSVGBackground && <>{leftSVGBackground}</>}
+                        {leftSVG && <div className="left-svg">{leftSVG}</div>} 
+                        {leftSVGBackground && <div className="left-svg-background">{leftSVGBackground}</div>}
                     </div>
                     <div className="col-2 right-section-svg-first-text">
-                        {leftText && <>{leftText}</>}
-                        {leftTextBackground && <>{leftTextBackground}</>}
+                        {leftText && <div className="left-text">{leftText}</div>}
+                        {leftTextBackground && <div className="left-text-background">{leftTextBackground}</div>}
                     </div>
                 </>
             )
@@ -73,24 +74,24 @@ const ScrollingPage: React.FC<LayoutProps> = ({
             {isMainTextFirst ? (
                 <>
                     <div className="col-2 main-section-text-first-text">
-                        {mainText && <>{mainText}</>}
-                        {mainTextBackground && <>{mainTextBackground}</>}
+                        {mainText && <div className="main-text">{mainText}</div>}
+                        {mainTextBackground && <div className="main-text-background">{mainTextBackground}</div>}
                     </div>
                     <div className="col-2 main-section-text-first-svg">
-                        {mainSVG && <>{mainSVG}</>} 
-                        {mainSVGBackground && <>{mainSVGBackground}</>}
+                        {mainSVG && <div className="main-svg">{mainSVG}</div>} 
+                        {mainSVGBackground && <div className="main-svg-background">{mainSVGBackground}</div>}
                     </div>
                     )
                 </> 
             ) : ( 
                 <>
                     <div className="col-2 main-section-svg-first-svg">
-                        {mainSVG && <>{mainSVG}</>} 
-                        {mainSVGBackground && <>{mainSVGBackground}</>}
+                        {mainSVG && <div className="main-svg">{mainSVG}</div>} 
+                        {mainSVGBackground && <div className="main-svg-background">{mainSVGBackground}</div>}
                     </div>
                     <div className="col-2 main-section-svg-first-text">
-                        {mainText && <>{mainText}</>}
-                        {mainTextBackground && <>{mainTextBackground}</>}
+                        {mainText && <div className="main-text">{mainText}</div>}
+                        {mainTextBackground && mainSVGBackground && <div className="main-text-background">{mainSVGBackground}</div>}
                     </div>
                 </>
             )
@@ -98,24 +99,24 @@ const ScrollingPage: React.FC<LayoutProps> = ({
             {isRightTextFirst ? (
                 <>
                     <div className="col-2 right-section-text-first-text">
-                        {rightText && <>{rightText}</>}
-                        {rightTextBackground && <>{rightTextBackground}</>}
+                        {rightText && <div className="right-text">{rightText}</div>}
+                        {rightTextBackground && <div className="main-text-background">{mainSVGBackground}</div>}
                     </div>
                     <div className="col-2 right-section-text-first-svg">
-                        {rightSVG && <>{rightSVG}</>} 
-                        {rightSVGBackground && <>{rightSVGBackground}</>}
+                        {rightSVG && <div className="right-svg">{rightSVG}</div>} 
+                        {rightSVGBackground && <div className="right-svg-background">{rightSVGBackground}</div>}
                     </div>
                     )
                 </> 
             ) : ( 
                 <>
                     <div className="col-2 right-section-svg-first-svg">
-                        {rightSVG && <>{rightSVG}</>} 
-                        {rightSVGBackground && <>{rightSVGBackground}</>}
+                        {rightSVG && <div className="right-svg">{rightSVG}</div>} 
+                        {rightSVGBackground && <div className="right-svg-background">{rightSVGBackground}</div>}
                     </div>
                     <div className="col-2 right-section-svg-first-text">
-                        {rightText && <>{rightText}</>}
-                        {rightTextBackground && <>{rightTextBackground}</>}
+                        {rightText && <div className="right-text">{rightText}</div>}
+                        {rightTextBackground && <div className="main-text-background">{mainSVGBackground}</div>}
                     </div>
                 </>
             )
