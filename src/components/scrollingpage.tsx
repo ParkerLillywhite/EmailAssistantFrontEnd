@@ -47,7 +47,6 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                         {section.leftSVG && <div className="left-svg">{section.leftSVG}</div>} 
                         {section.leftSVGBackground && <div className="left-svg-background">{section.leftSVGBackground}</div>}
                     </div>
-                    )
                 </> 
             ) : ( 
                 <>
@@ -72,7 +71,6 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                         {section.mainSVG && <div className="main-svg">{section.mainSVG}</div>} 
                         {section.mainSVGBackground && <div className="main-svg-background">{section.mainSVGBackground}</div>}
                     </div>
-                    )
                 </> 
             ) : ( 
                 <>
@@ -97,7 +95,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                         {section.rightSVG && <div className="right-svg">{section.rightSVG}</div>} 
                         {section.rightSVGBackground && <div className="right-svg-background">{section.rightSVGBackground}</div>}
                     </div>
-                    )
+                    
                 </> 
             ) : ( 
                 <>
