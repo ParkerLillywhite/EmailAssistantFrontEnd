@@ -1,22 +1,28 @@
-import Logo from '../logo.svg'
+import {ReactComponent as Logo} from '../logo.svg'
 
 const bunkString = "This is some content I made up here";
 
+//pay attention to 'Text' rather than 'String'
+//and 'SVG' rather than 'Svg'
+
 export const SECTIONS = [
     {
-        leftString: bunkString,
-        leftSvg: Logo,
+        leftText: bunkString,
+        leftSVG: Logo,
         leftTextBackground: Logo,
-        leftSvgBackground: Logo,
+        leftSVGBackground: Logo,
         isLeftTextFirst: true,
+
         mainText: bunkString,
+        mainSVG: Logo,
         mainTextBackground: Logo,
-        mainSvgBackgroung: Logo,
+        mainSVGBackground: Logo,
         isMainTextFirst: false,
+
         rightText: bunkString,
         rightSVG: Logo,
         rightTextBackground: Logo,
-        isRightTextFirst: true,
-        
+        rightSVGBackground: Logo,
+        isRightTextFirst: true
     }
 ]

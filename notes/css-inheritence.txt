@@ -1,0 +1,23 @@
+2. SASS Placeholders (%placeholder)
+✅ Good for reusable logic without polluting global CSS.
+
+Only compiles where used — more efficient.
+
+scss
+Copy
+Edit
+%card-base {
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+  @extend %card-base;
+  background-color: white;
+}
+
+.dark-card {
+  @extend %card-base;
+  background-color: #222;
+}

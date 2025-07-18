@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Layout from './layouts/layout'
 import ScrollingPage from './components/scrollingpage';
 import { SECTIONS } from './constants/homepage-constants'
