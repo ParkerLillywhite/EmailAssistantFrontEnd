@@ -24,5 +24,30 @@ export const SECTIONS = [
         rightTextBackground: Logo,
         rightSVGBackground: Logo,
         isRightTextFirst: true
+    },
+    {
+        leftText: bunkString,
+        leftSVG: Logo,
+        leftTextBackground: Logo,
+        isLeftTextFirst: false,
+
+        mainText: bunkString,
+        mainSVG: Logo,
+
+        isMainTextFirst: true,
+
+        isRightTextFirst: false
+    },
+    {
+        leftSVG: Logo,
+        leftTextBackground: Logo,
+        isLeftTextFirst: false,
+
+        mainText: bunkString,
+        mainSVG: Logo,
+
+        isMainTextFirst: true,
+
+        isRightTextFirst: false
     }
 ]

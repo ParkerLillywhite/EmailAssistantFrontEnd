@@ -1,4 +1,51 @@
-[data-component="background"] {
-    position: relative;
-    z-index: -1;
-  }
+.left-section-text-first-text,
+.left-section-text-first-svg,
+.left-section-svg-first-svg,
+.left-section-svg-first-text,
+.main-section-text-first-text,
+.main-section-text-first-svg,
+.main-section-svg-first-svg,
+.main-section-svg-first-text,
+.right-section-text-first-text,
+.right-section-text-first-svg,
+.right-section-svg-first-svg,
+.right-section-svg-first-text
+{
+  position: relative;
+  height: 200px;
+}
+
+.left-text,
+.left-svg,
+.main-text,
+.main-svg,
+.right-text,
+.right-svg 
+{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  inset: 0;
+  z-index: 1;
+}
+
+.left-text-background,
+.left-svg-background,
+.main-text-background,
+.main-svg-background,
+.right-svg-background,
+.right-text-background
+{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.container {
+  height: 5000px;
+}
