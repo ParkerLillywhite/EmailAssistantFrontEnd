@@ -30,7 +30,8 @@ export const SECTIONS = [
     {
         leftText: bunkString,
         leftSVG: Logo,
-        leftTextBackground: Logo,
+        leftTextBackground: Bracket,
+        leftTextBackgroundStyling: bracket,
         isLeftTextFirst: false,
 
         mainText: bunkString,
@@ -41,12 +42,14 @@ export const SECTIONS = [
         isRightTextFirst: false
     },
     {
-        leftSVG: Logo,
-        leftTextBackground: Logo,
         isLeftTextFirst: false,
 
         mainText: bunkString,
+        mainTextBackground: Bracket,
+        mainTextBackgroundStyling: bracket,
         mainSVG: Logo,
+        mainSVGBackground: Bracket,
+        mainSVGBackgroundStyling: bracket,
 
         isMainTextFirst: true,
 

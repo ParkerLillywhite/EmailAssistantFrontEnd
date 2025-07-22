@@ -45,7 +45,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
 
     const refs = useRef<HTMLDivElement[][]>([]); 
 
-    const speed = 0.3;
+    const speed = 0.1;
 
     useEffect(() => {
         const handleScroll = () => {
