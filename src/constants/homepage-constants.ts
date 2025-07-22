@@ -1,28 +1,30 @@
 import {ReactComponent as Logo} from '../logo.svg'
+import Bracket from '../assets/image-components'
 
-const bunkString = "This is some content I made up here";
+const bunkString = "This is some content I made up here. It is plentiful, and good. I think this paragraph is a great one.";
+
+const bracket = 'bracket';
 
 //pay attention to 'Text' rather than 'String'
 //and 'SVG' rather than 'Svg'
 
+//*****the booleans are required for now!!!
+
 export const SECTIONS = [
     {
         leftText: bunkString,
-        leftSVG: Logo,
-        leftTextBackground: Logo,
-        leftSVGBackground: Logo,
+        leftTextBackground: Bracket,
+        leftTextBackgroundStyling: bracket,
         isLeftTextFirst: true,
 
-        mainText: bunkString,
-        mainSVG: Logo,
-        mainTextBackground: Logo,
-        mainSVGBackground: Logo,
         isMainTextFirst: false,
 
         rightText: bunkString,
         rightSVG: Logo,
-        rightTextBackground: Logo,
-        rightSVGBackground: Logo,
+        rightTextBackground: Bracket,
+        rightTextBackgroundStyling: bracket,
+        rightSVGBackground: Bracket,
+        rightSVGBackgroundStyling: bracket,
         isRightTextFirst: true
     },
     {

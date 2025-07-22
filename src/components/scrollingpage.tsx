@@ -5,33 +5,30 @@ import './styles/scrollingpage.scss';
 
 interface Section {
     leftText?: string;
-    leftSVG?: React.FC<React.SVGProps<SVGSVGElement>>;
-    leftSVGAlt?: string;
-    leftTextBackground?: React.FC<React.SVGProps<SVGSVGElement>>;
-    leftTextBackgroundAlt?: string
-    leftSVGBackground?: React.FC<React.SVGProps<SVGSVGElement>>;
-    leftSVGBackgroundAlt?: string;
+    leftSVG?:  React.ComponentType<any>;
+    leftTextBackground?:  React.ComponentType<any>;
+    leftTextBackgroundStyling?: string;
+    leftSVGBackground?:  React.ComponentType<any>;
+    leftSVGBackgroundStyling?: string;
     isLeftTextFirst: Boolean;
 
     mainText?: string;
-    mainSVG?: React.FC<React.SVGProps<SVGSVGElement>>;
-    mainSVGAlt?: string;
-    mainTextBackground?: React.FC<React.SVGProps<SVGSVGElement>>;
-    mainTextBackgroundAlt?: string;
-    mainSVGBackground?: React.FC<React.SVGProps<SVGSVGElement>>;
-    mainSVGBackgroundAlt?: string;
+    mainSVG?:  React.ComponentType<any>;
+    mainTextBackground?:  React.ComponentType<any>;
+    mainTextBackgroundStyling?: string;
+    mainSVGBackground?:  React.ComponentType<any>;
+    mainSVGBackgroundStyling?: string;
     isMainTextFirst: Boolean;
 
     rightText?: string;
-    rightSVG?: React.FC<React.SVGProps<SVGSVGElement>>;
-    rightSVGAlt?: string;
-    rightTextBackground?: React.FC<React.SVGProps<SVGSVGElement>>;
-    rightTextBackgroundAlt?: string;
-    rightSVGBackground?: React.FC<React.SVGProps<SVGSVGElement>>;
-    rightSVGBackgroundAlt?: string;
+    rightSVG?:  React.ComponentType<any>
+    rightTextBackground?:  React.ComponentType<any>;
+    rightTextBackgroundStyling?: string;
+    rightSVGBackground?:  React.ComponentType<any>;
+    rightSVGBackgroundStyling?: string;
     isRightTextFirst: Boolean;
 
-    svg?: React.FC<React.SVGProps<SVGSVGElement>>;
+    svg?:  React.ComponentType<any>;
 }
 
 interface LayoutProps {
@@ -39,15 +36,6 @@ interface LayoutProps {
     children?: ReactNode
     speed?: number
 }
-
-const renderSVGBlock = (
-    Component?: React.FC<React.SVGProps<SVGSVGElement>>,
-    className?: string
-  ) => {
-    return Component ? (
-      <div className={className}><Component /></div>
-    ) : null;
-};
 
 const ScrollingPage: React.FC<LayoutProps> = ({
     sections,
@@ -86,7 +74,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.leftText && (
                     <div className="col-sm left-section-text-first-text"> 
                         {section.leftText && <div className="left-text">{section.leftText}</div>}
-                        {section.leftTextBackground && <div className="left-text-background"     
+                        {section.leftTextBackground && <div className={`left-text-background ${section.leftTextBackgroundStyling}`}    
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -100,7 +88,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.leftSVG && (
                     <div className="col-sm left-section-text-first-svg">
                         {section.leftSVG && <div className="left-svg"><section.leftSVG /></div>}
-                        {section.leftSVGBackground && <div className="left-svg-background" 
+                        {section.leftSVGBackground && <div className={`left-svg-background ${section.leftSVGBackgroundStyling}`}
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -117,7 +105,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.leftSVG && (
                     <div className="col-sm left-section-svg-first-svg">
                         {section.leftSVG && <div className="left-svg"><section.leftSVG /></div>}
-                        {section.leftSVGBackground && <div className="left-svg-background" 
+                        {section.leftSVGBackground && <div className={`left-svg-background ${section.leftSVGBackgroundStyling}`}
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -131,7 +119,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.leftText && (
                     <div className="col-sm left-section-svg-first-text">
                         {section.leftText && <div className="left-text">{section.leftText}</div>}
-                        {section.leftTextBackground && <div className="left-text-background" 
+                        {section.leftTextBackground && <div className={`left-text-background ${section.leftTextBackgroundStyling}`}    
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -150,7 +138,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.mainText && (
                     <div className="col-sm main-section-text-first-text">
                         {section.mainText && <div className="main-text">{section.mainText}</div>}
-                        {section.mainTextBackground && <div className="main-text-background" 
+                        {section.mainTextBackground && <div className={`main-text-background ${section.mainTextBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -164,7 +152,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.mainSVG && (
                     <div className="col-sm main-section-text-first-svg">
                         {section.mainSVG && <div className="main-svg"><section.mainSVG /></div>}
-                        {section.mainSVGBackground && <div className="main-svg-background" 
+                        {section.mainSVGBackground && <div className={`main-svg-background ${section.mainSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -181,7 +169,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.mainSVG && (
                     <div className="col-sm main-section-svg-first-svg">
                         {section.mainSVG && <div className="main-svg"><section.mainSVG /></div>}
-                        {section.mainSVGBackground && <div className="main-svg-background" 
+                        {section.mainSVGBackground && <div className={`main-svg-background ${section.mainSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -195,7 +183,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.mainText && (
                     <div className="col-sm main-section-svg-first-text">
                         {section.mainText && <div className="main-text">{section.mainText}</div>}
-                        {section.mainTextBackground && <div className="main-text-background" 
+                        {section.mainTextBackground && <div className={`main-text-background ${section.mainTextBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -214,7 +202,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.rightText && (
                     <div className="col-sm right-section-text-first-text">
                         {section.rightText && <div className="right-text">{section.rightText}</div>}
-                        {section.rightTextBackground && <div className="right-text-background" 
+                        {section.rightTextBackground && <div className={`right-text-background ${section.rightTextBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -228,7 +216,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.rightSVG && (
                     <div className="col-sm right-section-text-first-svg">
                         {section.rightSVG && <div className="right-svg"><section.rightSVG /></div>}
-                        {section.rightSVGBackground && <div className="right-svg-background" 
+                        {section.rightSVGBackground && <div className={`right-svg-background ${section.rightSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -245,7 +233,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.rightSVG && (
                     <div className="col-sm right-section-svg-first-svg">
                         {section.rightSVG && <div className="right-svg"><section.rightSVG /></div>}
-                        {section.rightSVGBackground && <div className="right-svg-background" 
+                        {section.rightSVGBackground && <div className={`right-svg-background ${section.rightSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -259,7 +247,7 @@ const ScrollingPage: React.FC<LayoutProps> = ({
                     {section.rightText && (
                     <div className="col-sm right-section-svg-first-text">
                         {section.rightText && <div className="right-text">{section.rightText}</div>}
-                        {section.rightTextBackground && <div className="right-text-background" 
+                        {section.rightTextBackground && <div className={`right-text-background ${section.rightTextBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];

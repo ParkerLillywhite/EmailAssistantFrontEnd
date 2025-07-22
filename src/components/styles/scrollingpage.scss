@@ -45,9 +45,15 @@
   height: 100%;
   will-change: transform;
   transform: translateY(0);
-  transition: transform 0.1s linear;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .container {
   height: 5000px;
+}
+
+.bracket > img{
+  height: 80%;
+  width: 80%;
+  opacity: 0.1;
 }
