@@ -1,8 +1,31 @@
 .app-header {
-    background: none;
-    height: 10%;
-    color: white;
+    position: fixed;
+    top: 0;
+    height: 1%;
     width: 100vw;
     text-align: center;
-    margin: 0;
+    margin-top: -2%;
+    z-index: 9999;
 }
+
+.header-right > *{
+    height: 50%;
+    width: 50%;
+}
+
+.header-left, .header-center {
+    margin-top: -3%;
+}
+
+@keyframes jitter {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(0, 0); }
+  }
+  
+  .jitter {
+    animation: jitter 0.3s ease-in-out;
+  }
+
