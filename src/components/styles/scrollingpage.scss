@@ -12,7 +12,7 @@
 .right-section-svg-first-text
 {
   position: relative;
-  height: 200px;
+  min-height: 700px;
 }
 
 .left-text,
@@ -54,8 +54,7 @@
 }
 
 .bracket > img{
-  
-  height: 90%;
+  height: 70%;
   width: 80%;
   opacity: 0.1;
 }
