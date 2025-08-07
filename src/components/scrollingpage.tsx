@@ -29,6 +29,7 @@ interface Section {
     isRightTextFirst: Boolean;
 
     svg?:  React.ComponentType<any>;
+    navigationReference?: React.RefObject<HTMLDivElement>;
 }
 
 interface LayoutProps {

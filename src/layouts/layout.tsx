@@ -10,6 +10,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const jitterRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -26,21 +27,29 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       }, 150);
     };
 
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+  const scrollToSection = () => {
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="container">
       <header className="row app-header">
-        <div className="col-4 d-flex justify-content-center align-items-center header-left">
+        <div className="col-4 d-flex justify-content-center align-items-center header-left"
+            onClick={scrollToSection}
+        >
             Left Side
         </div>
         <div className="col-4 d-flex justify-content-center align-items-center header-center">
             Center
         </div>
-        <div ref={jitterRef} className="col-4 d-flex justify-content-center align-items-center header-right">
-            <Satellite />
+        <div ref={jitterRef} className="col-4 d-flex justify-content-end align-items-center header-right">
+            <Satellite className="satellite"/>
         </div>
       </header>
       {children}

@@ -1,20 +1,54 @@
+@import '../../variables';
+
 .app-header {
+    left: 0;
+    right: 0;
+    height: 90px;     /* Always at least 60px tall */
+    // max-height: 20%;      /* Or, no more than 20% of viewport height */
+    // height: auto;  
     position: fixed;
     top: 0;
-    height: 1%;
-    width: 100vw;
     text-align: center;
-    margin-top: -2%;
     z-index: 9999;
+    margin-right: 0;
+    padding-right: 0;
 }
 
-.header-right > *{
-    height: 50%;
-    width: 50%;
+.header-left {
+    background-color: var(--navy-black);
+}
+
+.header-center {
+    background-color: var(--navy-black);
+}
+
+.header-right {
+    background-color: var(--navy-black);
+}
+
+.satellite {
+    margin-top: -1%;
+    fill: var(--text-muted);
+    max-height: 75%;
+    height: 90%;
+    width: auto;
+    right: 0;
+    transition: fill 1s ease-in-out; 
+}
+
+.satellite:hover {
+    cursor: pointer;
+    fill: var(--active-orange);
+}
+
+.app-header > .col-4 {
+    height: 100%;
+    color: white;
 }
 
 .header-left, .header-center {
-    margin-top: -3%;
+    position: relative;
+    height: 100%;
 }
 
 @keyframes jitter {
@@ -23,9 +57,9 @@
     50% { transform: translate(-1px, 1px); }
     75% { transform: translate(1px, 1px); }
     100% { transform: translate(0, 0); }
-  }
+}
   
   .jitter {
     animation: jitter 0.3s ease-in-out;
-  }
+}
 
