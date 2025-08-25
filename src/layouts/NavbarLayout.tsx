@@ -32,20 +32,19 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
   }, []);
 
   return (
-    <div className="container">
-      <header className="row app-header">
+    <div className="container" >
+      <header className="row app-header" ref={jitterRef}>
         <div className="col-4 d-flex justify-content-center align-items-center header-left"
             onClick={() => onNavigate(0)}
         >
-            Left Side
+          <span>Left Side</span>
         </div>
         <div className="col-4 d-flex justify-content-center align-items-center header-center"
             onClick={() => onNavigate(1)}
         >
-            Center
+          <span>Center</span>
         </div>
-        <div ref={jitterRef} className="col-4 d-flex justify-content-end align-items-center header-right"
-            onClick={() => onNavigate(2)}        
+        <div className="col-4 d-flex justify-content-end align-items-center header-right"        
         >
             <Satellite className="satellite"/>
         </div>
