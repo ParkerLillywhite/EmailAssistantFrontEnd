@@ -3,7 +3,7 @@ import { ReactComponent as SVG } from '../assets/right-background.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/scrollingpage.scss';
 
-interface Section {
+export interface Section {
     leftText?: string;
     leftSVG?:  React.ComponentType<any>;
     leftTextBackground?:  React.ComponentType<any>;
@@ -29,18 +29,18 @@ interface Section {
     isRightTextFirst: Boolean;
 
     svg?:  React.ComponentType<any>;
+    navigationReference?: React.RefObject<HTMLDivElement>;
 }
 
-interface LayoutProps {
+interface ScrollingPageProps {
     sections: Section[]
-    children?: ReactNode
+    sectionRefs: React.RefObject<HTMLDivElement[]>;
     speed?: number
 }
 
-const ScrollingPage: React.FC<LayoutProps> = ({
+const ScrollingPage: React.FC<ScrollingPageProps> = ({
     sections,
-    children,
-    
+    sectionRefs
 }) => {
 
     const refs = useRef<HTMLDivElement[][]>([]); 
@@ -67,7 +67,12 @@ const ScrollingPage: React.FC<LayoutProps> = ({
     <div className="container">
         { sections.map((section, index) => (
 
-        <div className="row main-content">
+        <div className="row main-content"
+          key={index}
+          ref={(el) => {
+            if (el) sectionRefs.current[index] = el;
+          }}
+        >
             <svg />
             {section.isLeftTextFirst ? (
                 <>
