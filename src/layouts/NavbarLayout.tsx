@@ -4,11 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 
 interface NavbarProps {
-    children: ReactNode;
     onNavigate: (index: number) => void;
 }
 
-const NavbarLayout: React.FC<NavbarProps> = ({ onNavigate }) => {
+function NavbarLayout({ onNavigate }: NavbarProps) {
 
   const jitterRef = useRef<HTMLDivElement>(null);
 

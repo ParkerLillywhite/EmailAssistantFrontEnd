@@ -8,7 +8,7 @@ import Layout from './layouts/layout';
 
 function App() {
   return (
-    <Layout sections= {SECTIONS} />
+    <Layout sections={SECTIONS} />
   );
 }
 
