@@ -1,15 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import Layout from './layouts/layout'
+import NavbarLayout from './layouts/NavbarLayout'
 import ScrollingPage from './components/scrollingpage';
 import { SECTIONS } from './constants/homepage-constants'
+import Layout from './layouts/layout';
 
 
 function App() {
   return (
-    <Layout>
-      <ScrollingPage sections={SECTIONS}/>
-    </Layout>
+    <Layout sections= {SECTIONS} />
   );
 }
 

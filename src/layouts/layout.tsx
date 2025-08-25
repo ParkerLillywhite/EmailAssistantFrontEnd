@@ -1,63 +1,27 @@
-import React, {ReactNode, useRef, useEffect} from 'react';
-import {ReactComponent as Satellite} from '../assets/satellite.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/styles.scss';
+import React, { ReactNode, useRef } from 'react';
+import logo from './logo.svg';
+import type { Section } from '../components/scrollingpage';
+import ScrollingPage from '../components/scrollingpage';
+import NavbarLayout from './NavbarLayout';
 
 interface LayoutProps {
-    children: ReactNode;
+    sections: Section[];
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+function Layout({ sections }: LayoutProps) {
 
-  const jitterRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef(null);
+    const sectionRefs = useRef<HTMLDivElement[]>([]);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        if (jitterRef.current) {
-          jitterRef.current.classList.add('jitter');
-          setTimeout(() => {
-            jitterRef.current?.classList.remove('jitter');
-          }, 300);
-        }
-      }, 150);
+    const scrollToSection = (index: number) => {
+        sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
     };
 
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-
-  const scrollToSection = () => {
-    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  return (
-    <div className="container">
-      <header className="row app-header">
-        <div className="col-4 d-flex justify-content-center align-items-center header-left"
-            onClick={scrollToSection}
-        >
-            Left Side
+    return (
+        <div>
+            <NavbarLayout onNavigate={scrollToSection}/>
+            <ScrollingPage sections={sections} sectionRefs={sectionRefs}/>
         </div>
-        <div className="col-4 d-flex justify-content-center align-items-center header-center">
-            Center
-        </div>
-        <div ref={jitterRef} className="col-4 d-flex justify-content-end align-items-center header-right">
-            <Satellite className="satellite"/>
-        </div>
-      </header>
-      {children}
-      <footer>
-
-      </footer>
-    </div>
-  );
+    );
 }
 
 export default Layout;
