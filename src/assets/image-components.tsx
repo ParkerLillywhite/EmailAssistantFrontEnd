@@ -1,9 +1,17 @@
 import React from 'react';
 import bracketPng from './brackets.png';
-import '../layouts/styles/styles.scss';
+import RobotPng from './Robot.png';
+import CrossBeamImage from './cross-beam-removebg-preview.png'
+import '../layouts/styles/NavbarStyles.scss';
 
-const Bracket: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+export const Bracket: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img className={props.className} src={bracketPng} alt="Bracket" {...props} />
 );
 
-export default Bracket;
+export const Robot: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+    <img className={props.className} src={RobotPng} alt="Robot" {...props} />
+);
+
+export const CrossBeam: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+    <img className={props.className} src={CrossBeamImage} alt="Robot" {...props} />
+);

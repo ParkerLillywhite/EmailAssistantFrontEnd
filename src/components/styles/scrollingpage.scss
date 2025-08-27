@@ -27,7 +27,6 @@
   position: relative;
   inset: 0;
   z-index: 1;
-  
 }
 
 .left-text-background,
@@ -50,11 +49,22 @@
 }
 
 .container {
-  height: 5000px;
+height: 100%
 }
 
-.bracket > img{
+.bracket > img, .bracket-alt > img{
+  position: absolute;
   height: 70%;
   width: 80%;
   opacity: 0.1;
+}
+
+.bracket-alt > img {
+  left: 22%;
+  top: 20%;
+}
+
+.robot-styling img{
+  position: relative;
+  right: -20%;
 }

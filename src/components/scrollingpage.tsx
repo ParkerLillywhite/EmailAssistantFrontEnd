@@ -6,6 +6,7 @@ import './styles/scrollingpage.scss';
 export interface Section {
     leftText?: string;
     leftSVG?:  React.ComponentType<any>;
+    leftSVGStyling?: string,
     leftTextBackground?:  React.ComponentType<any>;
     leftTextBackgroundStyling?: string;
     leftSVGBackground?:  React.ComponentType<any>;
@@ -14,6 +15,7 @@ export interface Section {
 
     mainText?: string;
     mainSVG?:  React.ComponentType<any>;
+    mainSVGStyling?: string, 
     mainTextBackground?:  React.ComponentType<any>;
     mainTextBackgroundStyling?: string;
     mainSVGBackground?:  React.ComponentType<any>;
@@ -22,6 +24,7 @@ export interface Section {
 
     rightText?: string;
     rightSVG?:  React.ComponentType<any>
+    rightSVGStyling?: string,
     rightTextBackground?:  React.ComponentType<any>;
     rightTextBackgroundStyling?: string;
     rightSVGBackground?:  React.ComponentType<any>;
@@ -92,7 +95,7 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                     )}
                     {section.leftSVG && (
                     <div className="col-sm left-section-text-first-svg">
-                        {section.leftSVG && <div className="left-svg"><section.leftSVG /></div>}
+                        {section.leftSVG && <div className={`left-svg ${section.leftSVGStyling}`}><section.leftSVG /></div>}
                         {section.leftSVGBackground && <div className={`left-svg-background ${section.leftSVGBackgroundStyling}`}
                             ref={(el) => {
                                 if (el) {
@@ -109,7 +112,7 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                 <>
                     {section.leftSVG && (
                     <div className="col-sm left-section-svg-first-svg">
-                        {section.leftSVG && <div className="left-svg"><section.leftSVG /></div>}
+                        {section.leftSVG && <div className={`left-svg ${section.leftSVGStyling}`}><section.leftSVG /></div>}
                         {section.leftSVGBackground && <div className={`left-svg-background ${section.leftSVGBackgroundStyling}`}
                             ref={(el) => {
                                 if (el) {
@@ -156,7 +159,7 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                     )}
                     {section.mainSVG && (
                     <div className="col-sm main-section-text-first-svg">
-                        {section.mainSVG && <div className="main-svg"><section.mainSVG /></div>}
+                        {section.mainSVG && <div className={`main-svg ${section.mainSVGStyling}`}><section.mainSVG /></div>}
                         {section.mainSVGBackground && <div className={`main-svg-background ${section.mainSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
@@ -173,7 +176,7 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                 <>
                     {section.mainSVG && (
                     <div className="col-sm main-section-svg-first-svg">
-                        {section.mainSVG && <div className="main-svg"><section.mainSVG /></div>}
+                        {section.mainSVG && <div className={`main-svg ${section.mainSVGStyling}`}><section.mainSVG /></div>}
                         {section.mainSVGBackground && <div className={`main-svg-background ${section.mainSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
@@ -220,7 +223,7 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                     )}
                     {section.rightSVG && (
                     <div className="col-sm right-section-text-first-svg">
-                        {section.rightSVG && <div className="right-svg"><section.rightSVG /></div>}
+                        {section.rightSVG && <div className={`right-svg ${section.rightSVGStyling}`}><section.rightSVG /></div>}
                         {section.rightSVGBackground && <div className={`right-svg-background ${section.rightSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
@@ -237,7 +240,7 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                 <>  
                     {section.rightSVG && (
                     <div className="col-sm right-section-svg-first-svg">
-                        {section.rightSVG && <div className="right-svg"><section.rightSVG /></div>}
+                        {section.rightSVG && <div className={`right-svg ${section.rightSVGStyling}`}><section.rightSVG /></div>}
                         {section.rightSVGBackground && <div className={`right-svg-background ${section.rightSVGBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {

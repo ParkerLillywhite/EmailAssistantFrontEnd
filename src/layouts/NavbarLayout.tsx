@@ -1,7 +1,7 @@
 import React, {ReactNode, useRef, useEffect} from 'react';
 import {ReactComponent as Satellite} from '../assets/satellite.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/styles.scss';
+import './styles/NavbarStyles.scss';
 
 interface NavbarProps {
     onNavigate: (index: number) => void;
@@ -37,16 +37,16 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
         <div className="col-4 d-flex justify-content-center align-items-center header-left"
             onClick={() => onNavigate(0)}
         >
-          <span>Left Side</span>
+          <span>home</span>
         </div>
         <div className="col-4 d-flex justify-content-center align-items-center header-center"
             onClick={() => onNavigate(1)}
         >
-          <span>Center</span>
+          <span className="neon flicker">rekol.me</span>
         </div>
-        <div className="col-4 d-flex justify-content-end align-items-center header-right"        
+        <div className="col-4 d-flex justify-content-center align-items-center header-right"        
         >
-            <Satellite className="satellite"/>
+            <Satellite className="satellite neon"/>
         </div>
       </header>
     </div>

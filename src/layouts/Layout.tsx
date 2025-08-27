@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import type { Section } from '../components/scrollingpage';
 import ScrollingPage from '../components/scrollingpage';
 import NavbarLayout from './NavbarLayout';
+import './styles/LayoutStyles.scss';
 
 interface LayoutProps {
     sections: Section[];
+    className?: string;
 }
 
-function Layout({ sections }: LayoutProps) {
+function Layout({ sections, className }: LayoutProps) {
 
     const sectionRefs = useRef<HTMLDivElement[]>([]);
 
@@ -17,7 +19,7 @@ function Layout({ sections }: LayoutProps) {
     };
 
     return (
-        <div>
+        <div className={className}>
             <NavbarLayout onNavigate={scrollToSection}/>
             <ScrollingPage sections={sections} sectionRefs={sectionRefs}/>
         </div>
