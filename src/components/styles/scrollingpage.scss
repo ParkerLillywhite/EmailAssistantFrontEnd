@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Righteous&family=Share+Tech+Mono&display=swap');
+
 .left-section-text-first-text,
 .left-section-text-first-svg,
 .left-section-svg-first-svg,
@@ -12,7 +14,20 @@
 .right-section-svg-first-text
 {
   position: relative;
-  min-height: 700px;
+  min-height: 200px;
+}
+
+.main-content {
+  margin-bottom:-10%;
+}
+
+.smaller-space {
+  margin-top: -40%;
+}
+
+h2 {
+  font-family: "Share Tech Mono";
+  opacity: 0.7;
 }
 
 .left-text,
@@ -27,6 +42,9 @@
   position: relative;
   inset: 0;
   z-index: 1;
+  color:white;
+  font-size: 1.2em;
+  padding: 5%;
 }
 
 .left-text-background,
@@ -48,23 +66,74 @@
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.container {
-height: 100%
+.main-content div {
+  display: flex;
+  align-items: center;
+  color: var(--text-blue);
 }
 
-.bracket > img, .bracket-alt > img{
+.bottom-text {
   position: absolute;
-  height: 70%;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end !important;
+  margin-bottom: 250%;
+  padding-bottom: 50%;
+  width: 200%;
+}
+
+.container {
+  height: 100%
+}
+
+.bracket > img, .bracket-alt > img, .cyber-space > img{
+  position: absolute;
+  height: 80%;
   width: 80%;
   opacity: 0.1;
 }
 
 .bracket-alt > img {
-  left: 22%;
   top: 20%;
 }
 
 .robot-styling img{
   position: relative;
   right: -20%;
+  margin-bottom: -10%;
+}
+
+.cyber-space img, .cyber-space-two img, .cyber-space-three img{
+  opacity: 0.15;
+  left: 10%;
+  top: 10%;
+  position: absolute;
+  height: 80%;
+  width: 70%;
+  will-change: transform;
+}
+
+.cyber-space-two img{
+  top: 35%;
+  width: 40%;
+}
+
+.cyber-space-three img{
+  top: 40%;
+  width: 40%;
+}
+
+.cyber-space-four img{
+  top: 40%;
+  width: 60%;
+  opacity: 0.1;
+}
+
+.moon img {
+  position: relative;
+  height: 100%;
+  width: 130%;
+  right: -20%;
+  filter: brightness(90%);
+  filter: grayscale(50%); /* 0% = original, 100% = black & white */
 }

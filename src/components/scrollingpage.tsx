@@ -5,6 +5,7 @@ import './styles/scrollingpage.scss';
 
 export interface Section {
     leftText?: string;
+    leftTextStyling?: string;
     leftSVG?:  React.ComponentType<any>;
     leftSVGStyling?: string,
     leftTextBackground?:  React.ComponentType<any>;
@@ -81,8 +82,12 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                 <>
                     {section.leftText && (
                     <div className="col-sm left-section-text-first-text"> 
-                        {section.leftText && <div className="left-text">{section.leftText}</div>}
-                        {section.leftTextBackground && <div className={`left-text-background ${section.leftTextBackgroundStyling}`}    
+                        {section.leftText && ( 
+                        <div 
+                          className={`left-text ${section.leftTextStyling}`} 
+                          dangerouslySetInnerHTML={{__html: section.leftText}}
+                        />  
+                        )}{section.leftTextBackground && <div className={`left-text-background ${section.leftTextBackgroundStyling}`}    
                             ref={(el) => {
                                 if (el) {
                                   if (!refs.current[index]) refs.current[index] = [];
@@ -145,7 +150,10 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                 <>
                     {section.mainText && (
                     <div className="col-sm main-section-text-first-text">
-                        {section.mainText && <div className="main-text">{section.mainText}</div>}
+                        {section.mainText && <div 
+                          className="main-text" 
+                          dangerouslySetInnerHTML={{__html: section.mainText}}
+                        />}
                         {section.mainTextBackground && <div className={`main-text-background ${section.mainTextBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {
@@ -209,7 +217,10 @@ const ScrollingPage: React.FC<ScrollingPageProps> = ({
                 <>
                     {section.rightText && (
                     <div className="col-sm right-section-text-first-text">
-                        {section.rightText && <div className="right-text">{section.rightText}</div>}
+                        {section.rightText && <div 
+                          className="right-text"
+                          dangerouslySetInnerHTML={{__html: section.rightText}}
+                        />}
                         {section.rightTextBackground && <div className={`right-text-background ${section.rightTextBackgroundStyling}`} 
                             ref={(el) => {
                                 if (el) {

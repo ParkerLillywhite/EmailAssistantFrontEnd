@@ -92,6 +92,24 @@
     animation: flicker 0.1s infinite; /* apply jitter animation */
 }
 
+.buttons, .buttons-two{
+ height: auto;
+ width: 20%;
+}
+
+.buttons:hover, .buttons-two:hover {
+    cursor: pointer;
+}
+
+.buttons-two {
+    transform: rotate(-0.5deg);
+}
+
+.shaded img{
+  filter: brightness(70%);
+}
+
+
 @keyframes jitter {
     0% { transform: translate(0, 0); }
     25% { transform: translate(1px, -1px); }
