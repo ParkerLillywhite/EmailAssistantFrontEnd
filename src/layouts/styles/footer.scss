@@ -5,6 +5,7 @@ html, body {
 
 .container-footer {
     margin: 0;
+    overflow: visible;
 }
 
 .footer {
@@ -18,9 +19,19 @@ html, body {
 }
 
 .additional-footer {
-    min-height:100px;
-    bottom: 0;
-    margin-top: 10%;
+    position: fixed;
+    min-height: 600px;
+    bottom: 0%;
+    margin-top: -11%;
+    background-image: url('../../assets/boxes.png');
+    background-size: 70% 120%;
+    background-repeat: no-repeat;
+    background-position: center 100%;
+    margin-bottom: -2%;
+    right: -30%;
+    position: relative;
+    z-index: 998;
+    filter: grayscale(70%) brightness(80%);
 
 }
 
@@ -35,9 +46,5 @@ html, body {
 .additional-footer-left, 
 .additional-footer-center,
 .additional-footer-right {
-    background-image: url('../../assets/cross-beam-removebg-preview.png');
-    background-size: cover;
-    background-position: center 40%;
-    position: relative;
-    z-index: 999;
+
 }

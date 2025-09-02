@@ -1,0 +1,31 @@
+.header-center::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 1;
+  animation: fadeBG 4.9s ease forwards;
+}
+
+/* Radial expand animation */
+@keyframes fadeBG {
+  to { opacity: 0; }
+}
+/* Content */
+.header-center {
+    opacity: 0;
+    animation: contentFade 1s ease forwards;
+    animation-delay: 0s; /* wait for radial intro */
+}
+
+.header-right, .header-left {
+    opacity: 0;
+    animation: contentFade 0.5s ease forwards;
+    animation-delay: 1.8s;
+}
+
+@keyframes contentFade {
+    to {
+        opacity: 1;
+    }
+}

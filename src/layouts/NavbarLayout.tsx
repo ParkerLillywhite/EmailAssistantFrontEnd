@@ -5,6 +5,7 @@ import {ButtonsTwo} from '../assets/image-components'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/NavbarStyles.scss';
 import { wait } from '@testing-library/user-event/dist/utils';
+import './styles/header-fadein.scss';
 
 interface NavbarProps {
     onNavigate: (index: number) => void;
@@ -56,7 +57,7 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
         >
             <ButtonsTwo className="buttons-two"/>
         </div>
-        <div className="col-4 d-flex justify-content-center align-items-center header-center"
+        <div className="col-4 d-flex justify-content-center align-items-center header-center "
             onClick={() => onNavigate(0)}
         >
           <span className="neon flicker">rekol.me</span>

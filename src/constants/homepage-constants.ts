@@ -92,7 +92,6 @@ export const SECTIONS = [
         leftSVG: EmptySpacer,
         isLeftTextFirst: true,
 
-
         isMainTextFirst: false,
 
         rightText: INTRODUCTION_TWO,

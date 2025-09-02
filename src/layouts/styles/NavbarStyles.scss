@@ -64,6 +64,8 @@
     padding: 0.05em 1em;
     font-family: 'Orbitron';
     margin-top: 3%;
+    z-index: 1020;
+    opacity: 1;        /* visible immediately */
 
     font-size: 2rem;
     color: var(--overhead-light-color);
