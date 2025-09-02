@@ -12,6 +12,7 @@ const bunkString = "This is some content I made up here. It is plentiful, and go
 
 const CYBER_STYLING = 'cyber-space';
 const CYBER_STYLING_TWO = "cyber-space-two";
+const CYBER_STYLING_TWO_ALTERNATE = "cyber-space-two-alternate"
 const CYBER_STYLING_THREE = "cyber-space-three";
 const bracket = "bracket";
 const BRACKET_ALT = "bracket-alt";
@@ -96,7 +97,7 @@ export const SECTIONS = [
 
         rightText: INTRODUCTION_TWO,
         rightTextBackground: CyberSpaceTwo,
-        rightTextBackgroundStyling: CYBER_STYLING_TWO,
+        rightTextBackgroundStyling: CYBER_STYLING_TWO_ALTERNATE,
         isRightTextFirst: true
     },
     {

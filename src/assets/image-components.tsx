@@ -46,3 +46,4 @@ export const RobotBeefCake: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> 
 export const Moon: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
     <img className={props.className} src={MoonImage} alt="Cyber space variant" {...props} />
 );
+

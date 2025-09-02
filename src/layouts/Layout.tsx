@@ -4,6 +4,7 @@ import type { Section } from '../components/scrollingpage';
 import ScrollingPage from '../components/scrollingpage';
 import NavbarLayout from './NavbarLayout';
 import './styles/LayoutStyles.scss';
+import Footer from './footer';
 
 interface LayoutProps {
     sections: Section[];
@@ -15,13 +16,24 @@ function Layout({ sections, className }: LayoutProps) {
     const sectionRefs = useRef<HTMLDivElement[]>([]);
 
     const scrollToSection = (index: number) => {
-        sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
+        const element = sectionRefs.current[index];
+        if (!element) return;
+
+        const navHeight = 80; // adjust this to your fixed nav height
+        const y = element.getBoundingClientRect().top + window.scrollY - navHeight;
+
+        window.scrollTo({
+            top: y,
+            behavior: "smooth",
+        });
     };
+
 
     return (
         <div className={className}>
             <NavbarLayout onNavigate={scrollToSection}/>
             <ScrollingPage sections={sections} sectionRefs={sectionRefs}/>
+            <Footer />
         </div>
     );
 }
