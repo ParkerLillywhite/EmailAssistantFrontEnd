@@ -1,15 +1,32 @@
-import React, {ReactNode, useRef, useEffect} from 'react';
+import React, {ReactNode, useRef, useEffect, useState} from 'react';
 import {ReactComponent as Satellite} from '../assets/satellite.svg';
+import {Buttons} from '../assets/image-components';
+import {ButtonsTwo} from '../assets/image-components'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/styles.scss';
+import './styles/NavbarStyles.scss';
+import { wait } from '@testing-library/user-event/dist/utils';
 
 interface NavbarProps {
     onNavigate: (index: number) => void;
 }
 
+
 function NavbarLayout({ onNavigate }: NavbarProps) {
 
   const jitterRef = useRef<HTMLDivElement>(null);
+
+  const [shaded, setShaded] = useState(false);
+  const [shadedAlt, setShadedAlt] = useState(false);
+
+  const handleClick = () => {
+    setShaded(!shaded);
+    setTimeout(() => setShaded(false), 90)
+  }
+
+  const handleClickAlt = () => {
+    setShadedAlt(!shadedAlt);
+    setTimeout(() => setShadedAlt(false), 90)
+  }
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -34,19 +51,21 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
   return (
     <div className="container" >
       <header className="row app-header" ref={jitterRef}>
-        <div className="col-4 d-flex justify-content-center align-items-center header-left"
-            onClick={() => onNavigate(0)}
+        <div className={`col-4 d-flex justify-content-center align-items-center header-left ${shaded ? "shaded" : ""}`}
+            onClick={() => {onNavigate(1); handleClick() }}
         >
-          <span>Left Side</span>
+            <ButtonsTwo className="buttons-two"/>
         </div>
         <div className="col-4 d-flex justify-content-center align-items-center header-center"
-            onClick={() => onNavigate(1)}
+            onClick={() => onNavigate(0)}
         >
-          <span>Center</span>
+          <span className="neon flicker">rekol.me</span>
         </div>
-        <div className="col-4 d-flex justify-content-end align-items-center header-right"        
+        <div className={`col-4 d-flex justify-content-center align-items-center header-right ${shadedAlt ? "shaded" : ""}`}    
+            onClick={() => {onNavigate(2); handleClickAlt() }}
+  
         >
-            <Satellite className="satellite"/>
+            <Buttons className="buttons"/>
         </div>
       </header>
     </div>
