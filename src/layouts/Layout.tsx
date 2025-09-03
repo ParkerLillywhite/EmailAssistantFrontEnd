@@ -5,6 +5,7 @@ import ScrollingPage from '../components/scrollingpage';
 import NavbarLayout from './NavbarLayout';
 import './styles/LayoutStyles.scss';
 import Footer from './footer';
+import '../styles/intro-animation.scss';
 
 interface LayoutProps {
     sections: Section[];
@@ -30,10 +31,13 @@ function Layout({ sections, className }: LayoutProps) {
 
 
     return (
-        <div className={className}>
+        <div>
+        <div id="intro"></div>
             <NavbarLayout onNavigate={scrollToSection}/>
+        <div className={className} id="content">
             <ScrollingPage sections={sections} sectionRefs={sectionRefs}/>
             <Footer />
+        </div>
         </div>
     );
 }

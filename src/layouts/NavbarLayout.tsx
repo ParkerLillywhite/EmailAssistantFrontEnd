@@ -5,6 +5,8 @@ import {ButtonsTwo} from '../assets/image-components'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/NavbarStyles.scss';
 import { wait } from '@testing-library/user-event/dist/utils';
+import './styles/header-fadein.scss';
+import shock from '../assets/shock.mp3';
 
 interface NavbarProps {
     onNavigate: (index: number) => void;
@@ -28,10 +30,14 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
     setTimeout(() => setShadedAlt(false), 90)
   }
 
+
   useEffect(() => {
     let timeout: NodeJS.Timeout;
+    const audio = new Audio(shock);
+    audio.play();
 
     const handleScroll = () => {
+
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         if (jitterRef.current) {
@@ -56,7 +62,7 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
         >
             <ButtonsTwo className="buttons-two"/>
         </div>
-        <div className="col-4 d-flex justify-content-center align-items-center header-center"
+        <div className="col-4 d-flex justify-content-center align-items-center header-center "
             onClick={() => onNavigate(0)}
         >
           <span className="neon flicker">rekol.me</span>

@@ -11,14 +11,14 @@ function Footer() {
 
   return (
     <div className="container-footer" >
-        <div className="row additional-footer">
+        {/* <div className="row additional-footer">
             <div className="col-4 d-flex justify-content-center align-items-center additional-footer-left">
             </div>
             <div className="col-4 d-flex justify-content-center align-items-center additional-footer-center">
             </div>
             <div className="col-4 d-flex justify-content-center align-items-center additional-footer-right">
             </div>
-        </div>
+        </div> */}
       <footer className="row footer">
         <div className={`col-4 d-flex justify-content-center align-items-center footer-left`}>
         </div>
