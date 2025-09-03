@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/NavbarStyles.scss';
 import { wait } from '@testing-library/user-event/dist/utils';
 import './styles/header-fadein.scss';
+import shock from '../assets/shock.mp3';
 
 interface NavbarProps {
     onNavigate: (index: number) => void;
@@ -29,10 +30,14 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
     setTimeout(() => setShadedAlt(false), 90)
   }
 
+
   useEffect(() => {
     let timeout: NodeJS.Timeout;
+    const audio = new Audio(shock);
+    audio.play();
 
     const handleScroll = () => {
+
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         if (jitterRef.current) {
