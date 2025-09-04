@@ -147,3 +147,22 @@ h2 {
   filter: brightness(90%);
   filter: grayscale(50%); /* 0% = original, 100% = black & white */
 }
+
+//=======================================================================================================
+//media queries
+
+
+@media (max-width: 425px) {
+
+  .robot-styling img{
+    position: relative;
+    right: 0%;
+    margin-bottom: -50%;
+    height: 90%;
+    width: auto;
+  }
+  .bracket > img {
+    position: absolute;
+    display: none;
+  }
+}
