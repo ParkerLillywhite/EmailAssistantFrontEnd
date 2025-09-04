@@ -53,7 +53,7 @@
     color: white;
 }
 
-.header-left, .header-center {
+.header-left, .header-center, .header-right {
     position: relative;
     height: 100%;
 }
@@ -141,4 +141,32 @@
 
 .neon.flicker {
     animation: flicker 1.5s infinite;
+}
+
+//=======================================================================
+//media queries
+
+
+@media(max-width: 425px) {
+  .app-header {
+    
+  }
+
+  .header-center span {
+    white-space: normal;
+    z-index: 10;
+  }
+
+  .header-right { 
+    z-index: -10;
+  }
+
+
+  .header-left, .header-center, .header-right {
+    background-size: 200%;
+    background-repeat: none;
+    background-position: center 40%;
+    position: relative;
+    overflow: visible;
+}
 }
