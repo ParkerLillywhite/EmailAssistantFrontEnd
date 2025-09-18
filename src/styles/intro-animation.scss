@@ -1,3 +1,7 @@
+@import '../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Monoton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Righteous&family=Share+Tech+Mono&display=swap');
+
+
 html, body {
   margin: 0;
   height: 100%;
@@ -16,6 +20,36 @@ html, body {
   opacity: 1;
   animation: fadeOut 1s ease forwards; /* fade out in 1 second */
   animation-delay: 2s; /* optional delay */
+}
+
+#intro::after {
+  content: 'Incoming Message';
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -10%);
+  color: var(--text-blue);
+  font-size: 24px;
+  text-align: center;
+  font-family: "Share Tech Mono";
+
+  /* Gradient text setup */
+  background: linear-gradient(90deg, var(--text-blue), rgb(0, 0, 0));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the gradient */
+  animation: gradientMove 4s linear 1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
 }
 
 /* The fade out animation */

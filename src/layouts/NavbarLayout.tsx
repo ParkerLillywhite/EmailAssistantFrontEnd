@@ -33,8 +33,6 @@ function NavbarLayout({ onNavigate }: NavbarProps) {
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    const audio = new Audio(shock);
-    audio.play();
 
     const handleScroll = () => {
 
