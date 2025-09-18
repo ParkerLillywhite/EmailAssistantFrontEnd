@@ -1,6 +1,7 @@
 import React, { ReactNode, useRef } from 'react';
 import logo from './logo.svg';
 import type { Section } from '../components/scrollingpage';
+import { Helmet } from "react-helmet-async";
 import ScrollingPage from '../components/scrollingpage';
 import NavbarLayout from './NavbarLayout';
 import './styles/LayoutStyles.scss';
@@ -32,6 +33,15 @@ function Layout({ sections, className }: LayoutProps) {
 
     return (
         <div>
+            <Helmet>
+                <title>Rekol.me</title>
+                <meta
+                name="ECHO by Rekol.me – Free AI Email Assistant | Never Miss a Follow-Up Again"
+                content="ECHO is your free AI email assistant from Rekol.me. Forward emails to assist@rekol.me and get automatic reminders for client follow-ups, deadlines, and tasks—right when you need them."
+                />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta charSet="utf-8" />
+            </Helmet>
         <div id="intro"></div>
             <NavbarLayout onNavigate={scrollToSection}/>
         <div className={className} id="content">
